@@ -11,8 +11,9 @@ def read_input(filename: str) -> str:
         return contents
 
 
-def write_input_file(aoc_day: int, contents: str) -> bool:
-    with open(f'Input/day_{aoc_day:02}.txt', 'w') as f:
+def write_input_file(aoc_day: int, contents: str, **kwargs) -> bool:
+    filename_suffix = kwargs.get('filename_suffix', '')
+    with open(f'Input/day_{aoc_day:02}{filename_suffix}.txt', 'w') as f:
         f.write(contents)
     return True
 
